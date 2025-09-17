@@ -31,8 +31,8 @@ async function getCars() {
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
-        {{ cars }}
+      <div v-for="car in cars" :key="car.id" class="col-md-6">
+        {{ car.make }} {{ car.model }}
       </div>
     </div>
   </div>
