@@ -10,6 +10,12 @@ class CarsService {
     const cars = response.data.map(pojo => new Car(pojo))
     AppState.cars = cars
   }
+  async deleteCar(carId) {
+    const response = await api.delete(`api/cars/${carId}`)
+    logger.log('DELETED CAR 💥', response.data)
+    const index = AppState.cars.findIndex(car => car.id == carId)
+    AppState.cars.splice(index, 1)
+  }
 }
 
 export const carsService = new CarsService()
