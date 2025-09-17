@@ -51,6 +51,7 @@ async function getCars() {
     </div>
   </div>
   <ModalWrapper modalId="car-form-modal" modalTitle="Create Car">
+    <!-- NOTE this CarForm SLOTS into the slot tag of the ModalWrapper -->
     <CarForm />
   </ModalWrapper>
 </template>
