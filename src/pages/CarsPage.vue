@@ -37,7 +37,7 @@ async function getCars() {
     <!-- NOTE only show the form if i am logged in! -->
     <div v-if="account" class="row">
       <div class="col-12 my-2">
-        <button class="btn btn-gregslist-green" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">
+        <button class="btn btn-gregslist-green" data-bs-toggle="modal" data-bs-target="#car-form-modal" type="button">
           List Your Car
         </button>
         <!-- NOTE moved to modal -->
@@ -50,7 +50,9 @@ async function getCars() {
       </div>
     </div>
   </div>
-  <ModalWrapper />
+  <ModalWrapper modalId="car-form-modal" modalTitle="Create Car">
+    <CarForm />
+  </ModalWrapper>
 </template>
 
 
