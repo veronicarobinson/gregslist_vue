@@ -40,7 +40,7 @@ async function getCars() {
         <button class="btn btn-gregslist-green" data-bs-toggle="modal" data-bs-target="#car-form-modal" type="button">
           List Your Car
         </button>
-        <!-- NOTE moved to modal -->
+        <!-- REVIEW moved to modal -->
         <!-- <CarForm /> -->
       </div>
     </div>
@@ -50,6 +50,7 @@ async function getCars() {
       </div>
     </div>
   </div>
+  <!-- NOTE if your props have string data types, you do not need to 'bind' the attribute -->
   <ModalWrapper modalId="car-form-modal" modalTitle="Create Car">
     <!-- NOTE this CarForm SLOTS into the slot tag of the ModalWrapper -->
     <CarForm />

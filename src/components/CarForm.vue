@@ -4,7 +4,7 @@ import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
 import { ref } from 'vue';
 
-
+// NOTE used to generate our options in select tag
 const engineTypes = [
   'unknown',
   '2 stroke',
@@ -78,10 +78,6 @@ async function createCar() {
         <input v-model="editableCarData.price" id="car-price" class="form-control" type="number" required min="0"
           max="1000000">
       </div>
-      <div class="col-12">
-
-      </div>
-
       <div class="col-md-6">
         <label for="car-img-url" class="form-label">Car ImgUrl</label>
         <input v-model="editableCarData.imgUrl" id="car-img-url" class="form-control" type="url" required
@@ -90,7 +86,7 @@ async function createCar() {
         <img v-if="editableCarData.imgUrl" :src="editableCarData.imgUrl" alt="Your car image" class="img fluid w-100">
         <img v-else src="https://placehold.co/600x400/EEE/31343C" alt="Placeholder image" class="img-fluid w-100">
       </div>
-      <div class="col-md-6 ">
+      <div class="col-md-6">
         <div class="d-flex gap-4">
           <div>
             <label for="car-color" class="form-label">Car Color</label>

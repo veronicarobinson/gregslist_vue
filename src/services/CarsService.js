@@ -3,6 +3,7 @@ import { api } from "./AxiosService.js"
 import { Car } from "@/models/Car.js"
 import { AppState } from "@/AppState.js"
 
+// REVIEW nothing much has changed here since the MVC template
 class CarsService {
 
   async getCars() {
