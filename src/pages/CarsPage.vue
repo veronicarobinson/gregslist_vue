@@ -8,6 +8,7 @@ import { Pop } from '@/utils/Pop.js';
 import { computed, onMounted } from 'vue';
 
 const cars = computed(() => AppState.cars)
+const account = computed(() => AppState.account)
 
 onMounted(() => {
   getCars()
@@ -32,7 +33,8 @@ async function getCars() {
         <h1 class="display-3">Cars</h1>
       </div>
     </div>
-    <div class="row">
+    <!-- NOTE only show the form if i am logged in! -->
+    <div v-if="account" class="row">
       <div class="col-12">
         <CarForm />
       </div>

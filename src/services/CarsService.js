@@ -4,6 +4,7 @@ import { Car } from "@/models/Car.js"
 import { AppState } from "@/AppState.js"
 
 class CarsService {
+
   async getCars() {
     const response = await api.get('api/cars')
     logger.log('GOT CARS 🏎️🚙🚓', response.data)
@@ -15,6 +16,13 @@ class CarsService {
     logger.log('DELETED CAR 💥', response.data)
     const index = AppState.cars.findIndex(car => car.id == carId)
     AppState.cars.splice(index, 1)
+  }
+
+  async createCar(carData) {
+    const response = await api.post('api/cars', carData)
+    logger.log('CREATED CAR', response.data)
+    const car = new Car(response.data)
+    AppState.cars.push(car)
   }
 }
 
