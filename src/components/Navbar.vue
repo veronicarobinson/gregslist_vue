@@ -31,11 +31,9 @@ watch(theme, () => {
       <!-- collapsing menu -->
       <div class="collapse navbar-collapse " id="navbar-links">
         <ul class="navbar-nav">
-          <li>
-            <RouterLink :to="{ name: 'About' }" class="btn text-green selectable">
-              About
-            </RouterLink>
-          </li>
+          <RouterLink :to="{ name: 'Car Listings' }">
+            <li class="text-gregslist-green">Cars</li>
+          </RouterLink>
         </ul>
         <!-- LOGIN COMPONENT HERE -->
         <div class="ms-auto">
