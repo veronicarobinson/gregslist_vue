@@ -4,12 +4,6 @@ import { House } from "@/models/House.js"
 import { AppState } from "@/AppState.js"
 
 class HousesService {
-    async createHouse(houseData) {
-        const response = await api.post('api/houses', houseData)
-        logger.log('CREATED HOUSE', response.data)
-        const house = new House(response.data)
-        AppState.houses.push(house)
-    }
 
     async getHouses() {
         // logger.log('hello')
@@ -19,5 +13,18 @@ class HousesService {
         AppState.houses = houses
     }
 
+    async createHouse(houseData) {
+        const response = await api.post('api/houses', houseData)
+        logger.log('CREATED HOUSE', response.data)
+        const house = new House(response.data)
+        AppState.houses.push(house)
+    }
+    async deleteHouse(houseId) {
+        const response = await api.delete(`api/houses/${houseId}`)
+        logger.log('DELETED CAR ❌', response.data)
+        const index = AppState.houses.findIndex(house => house.id == houseId)
+        AppState.houses.splice(index, 1)
+
+    }
 }
 export const housesService = new HousesService()

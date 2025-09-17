@@ -37,21 +37,24 @@ async function getHouses() {
         </div>
         <!-- TODO -->
         <!-- SECTION ONLY LOG IN IF I AM LOGGED IN -->
-        <div class="row">
-            <button class="btn btn-gregslist-green" data-bs-toggle="modal" data-bs-target="#house-form-modal" type="button">
-                List Your House
-            </button>
-        <!-- NOTE copy and paste into HouseForm and move down to modal BELOW TODO COMMENT -->
-            <!-- <form class="container-fluid my-3">
-                <div class="row">
-                    <div class="col">
-                        <label>House Image URL</label>
-                        <input id="house">
-                    </div>
-                    <div class="col"></div>
-                </div>
+        <div v-if="account" class="row">
+            <div class="col-12 my-2">
+                <button class="btn btn-gregslist-green" data-bs-toggle="modal" data-bs-target="#house-form-modal" type="button">
+                    List Your House
+                </button>
 
-            </form> -->
+                <!-- NOTE copy and paste into HouseForm and move down to modal BELOW TODO COMMENT -->
+                    <!-- <form class="container-fluid my-3">
+                        <div class="row">
+                            <div class="col">
+                                <label>House Image URL</label>
+                                <input id="house">
+                            </div>
+                            <div class="col"></div>
+                        </div>
+        
+                    </form> -->
+            </div>
         </div>
         
         <!-- SECTION House Listings -->
