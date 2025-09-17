@@ -2,6 +2,7 @@
 import { AppState } from '@/AppState.js';
 import CarForm from '@/components/CarForm.vue';
 import CarListing from '@/components/CarListing.vue';
+import ModalWrapper from '@/components/ModalWrapper.vue';
 import { carsService } from '@/services/CarsService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
@@ -35,8 +36,12 @@ async function getCars() {
     </div>
     <!-- NOTE only show the form if i am logged in! -->
     <div v-if="account" class="row">
-      <div class="col-12">
-        <CarForm />
+      <div class="col-12 my-2">
+        <button class="btn btn-gregslist-green" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">
+          List Your Car
+        </button>
+        <!-- NOTE moved to modal -->
+        <!-- <CarForm /> -->
       </div>
     </div>
     <div class="row">
@@ -45,6 +50,7 @@ async function getCars() {
       </div>
     </div>
   </div>
+  <ModalWrapper />
 </template>
 
 
