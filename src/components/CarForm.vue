@@ -78,31 +78,39 @@ async function createCar() {
         <input v-model="editableCarData.price" id="car-price" class="form-control" type="number" required min="0"
           max="1000000">
       </div>
-      <div class="col-md-6">
-        <label for="car-description" class="form-label">Car Description</label>
-        <textarea v-model="editableCarData.description" id="car-description" maxlength="500"
-          placeholder="Describe your car!" class="form-control"></textarea>
-      </div>
-      <div class="col-md-6 d-flex gap-4">
-        <div>
-          <label for="car-color" class="form-label">Car Color</label>
-          <input v-model="editableCarData.color" id="car-color" type="color" class="form-control form-control-color">
-        </div>
-        <div class="flex-grow-1">
-          <label for="car-engine-type" class="form-label">Select an engine type</label>
-          <select v-model="editableCarData.engineType" id="car-engine-type" class="form-control">
-            <option value="" disabled>Select an engine please</option>
-            <option v-for="engineType in engineTypes" :key="engineType" :value="engineType">
-              {{ engineType }}
-            </option>
-          </select>
-        </div>
+      <div class="col-12">
+
       </div>
 
-      <div class="col-12">
+      <div class="col-md-6">
         <label for="car-img-url" class="form-label">Car ImgUrl</label>
         <input v-model="editableCarData.imgUrl" id="car-img-url" class="form-control" type="url" required
           maxlength="1000">
+        <small>Image preview</small>
+        <img v-if="editableCarData.imgUrl" :src="editableCarData.imgUrl" alt="Your car image" class="img fluid w-100">
+        <img v-else src="https://placehold.co/600x400/EEE/31343C" alt="Placeholder image" class="img-fluid w-100">
+      </div>
+      <div class="col-md-6 ">
+        <div class="d-flex gap-4">
+          <div>
+            <label for="car-color" class="form-label">Car Color</label>
+            <input v-model="editableCarData.color" id="car-color" type="color" class="form-control form-control-color">
+          </div>
+          <div class="flex-grow-1">
+            <label for="car-engine-type" class="form-label">Select an engine type</label>
+            <select v-model="editableCarData.engineType" id="car-engine-type" class="form-control">
+              <option value="" disabled>Select an engine please</option>
+              <option v-for="engineType in engineTypes" :key="engineType" :value="engineType">
+                {{ engineType }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="car-description" class="form-label">Car Description</label>
+          <textarea v-model="editableCarData.description" id="car-description" maxlength="500"
+            placeholder="Describe your car!" class="form-control"></textarea>
+        </div>
       </div>
       <div class="col-12 mt-3 text-end">
         <button class="btn btn-gregslist-green" type="submit">
